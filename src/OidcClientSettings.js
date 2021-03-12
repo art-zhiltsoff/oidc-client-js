@@ -38,7 +38,9 @@ export class OidcClientSettings {
         MetadataServiceCtor = MetadataService,
         // extra query params
         extraQueryParams = {},
-        extraTokenParams = {}
+        extraTokenParams = {},
+        // custom
+        login_uri
     } = {}) {
 
         this._authority = authority;
@@ -77,6 +79,8 @@ export class OidcClientSettings {
 
         this._extraQueryParams = typeof extraQueryParams === 'object' ? extraQueryParams : {};
         this._extraTokenParams = typeof extraTokenParams === 'object' ? extraTokenParams : {};
+        
+        this.login_uri = login_uri;
     }
 
     // client config
